@@ -2,6 +2,7 @@
 from __future__ import print_function
 from PIL import Image
 from PIL import ImageTk
+from time import sleep
 import Tkinter as tki
 import threading
 import datetime
@@ -61,7 +62,6 @@ class IEDGUI:
 			while not self.stopEvent.is_set():
 				# grab the frame from the Open CV
 				self.ret,self.frame = self.cvv.read()
-		
 				# OpenCV represents images in BGR order; however PIL
 				# represents images in RGB order, so we need to swap
 				# the channels, then convert to PIL and ImageTk format
@@ -123,7 +123,8 @@ class IEDGUI:
 		print("[INFO] closing...")
 		self.stopEvent.set()
 		self.cvv.release()
+		sleep(.5)
 		self.root.destroy()
-		print("safe exit")
+
 
 		

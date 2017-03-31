@@ -18,4 +18,4 @@ cvv.set(6,40)#set fps to 40
 time.sleep(2.0)
 ied = IEDGUI(cvv,args["output"])
 ied.root.mainloop()
-print("testing")
+print("safe exit")
